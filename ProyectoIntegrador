@@ -136,11 +136,12 @@ public class ProyectoFinal {
                             System.out.println("El total a pagar en 1 cuota es: " + pagoDebito);
                             System.out.println("en 3 cuotas: " + (pagoDebito % 3));
                             System.out.println("en 6 cuotas: " + (pagoDebito %6));
+                            caja += pagoDebito;
                         }
                     }
                 }
                 case 4 -> {
-                    System.out.println("En el día de hoy se han realizado: "+ nVentas+ " ventas y hay una recaudación en la caja de: "+ caja);
+                    System.out.println("En el día de hoy se han realizado: "+ nVentas+ " ventas y hay una recaudación de: "+ caja);
                     System.out.println("Desea cerrar la caja? SI/NO");
                     cerrarCaja = entrada.nextLine();
                     if(cerrarCaja == "SI"){
