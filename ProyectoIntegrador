@@ -20,25 +20,26 @@ public class ProyectoFinal {
         String cerrarCaja;
         //Mostramos el menú
         while(opcion!=6){
-            System.out.println(" =================\u00a1BIENVENIDO A CHANGO MAX!==============");
-            System.out.println("1. Abrir Caja");
-            System.out.println("2. Ventas");
-            System.out.println("3. Pago");
-            System.out.println("4. Cierre de Caja");
-            System.out.println("Ingrese una opcion: ");
+            System.out.println("\n\t=================\u00a1BIENVENIDO A CHANGO MAX!==============");
+            System.out.println("\t1. Abrir Caja");
+            System.out.println("\t2. Ventas");
+            System.out.println("\t3. Pago");
+            System.out.println("\t4. Cierre de Caja");
+            System.out.println("\t=========================================================");
+            System.out.println("\tIngrese una opcion: ");
             opcion = entrada.nextInt();
             //Desarrollo de cada una de las funciones que podemos realizar
             switch(opcion){
                 case 1 -> {
                     //Para abrir la caja el usuario y contraseña son 1234
                     float efectivo = 0;
-                    System.out.println("Ingrese el usuario:");
+                    System.out.println("\nIngrese el usuario:");
                     usuario = entrada.nextInt();
                     System.out.println("Ingrese la contraseña");
                     contraseña= entrada.nextInt();
                     while (intento < 3){ //Sólo se puede equivocar 3 veces
                         if(usuario ==1234 && contraseña == 1234){
-                            System.out.println("=============== CAJA ABIERTA ===============");
+                            System.out.println("\n\t=============== CAJA ABIERTA ===============");
                             System.out.println("Cuánto efectivo hay en la caja?");
                             efectivo = entrada.nextFloat();
                             // Si efectivo es un numero entero positivo se hace el proceso que sigue:
@@ -46,13 +47,15 @@ public class ProyectoFinal {
                                 caja += efectivo;
                                 System.out.println("\n Hay un total de "+caja+" pesos en la caja de ventas anteriores.");
                                 cerrado=false;
-                            } else {// por si ingresa un número negativo
+                            } 
+                            else {// por si ingresa un número negativo
                                 System.out.println("Inserte una cantidad valida de dinero!");
                             }
-                            intento++;
-                        } else if (usuario != 1234 && contraseña != 1234){
+                        } 
+                        else {
                             System.out.println("El usuario y/o contraseña ingresados no son correctos");
                         }
+                        intento++;
                         break;
                     }
                 }       
@@ -68,17 +71,19 @@ public class ProyectoFinal {
                             // Este do-while nos ayuda como un cliclo que siempre da la eleccion al usuario SI
                             while (condicion = true){
                                 if (cliente == 1 || cliente !=2){
-                                    System.out.println("        Combo de servicio                    |               Precio              "); 
-                                    System.out.println("2   Sensor de riego                                                     ");
-                                    System.out.println("2   Drones para fertilizacion                                           ");                        
-                                    System.out.println("2   Sensor de temperatura:                                              ");                    
-                                    System.out.println("2   Alertas meteorologicas automatizadas                                ");
-                                    System.out.println("                                                              $100.000  ");
-                                    System.out.println("Cuántos combos va a comprar?");
+                                    System.out.println("----------------------------------------------------------------------------");
+                                    System.out.println("\tCOMBO DE SERVICIOS                    |               PRECIO              "); 
+                                    System.out.println("\n\t2   Sensor de riego                                                     ");
+                                    System.out.println("\t2   Drones para fertilizacion                                             ");                        
+                                    System.out.println("\t2   Sensor de temperatura:                                                ");                    
+                                    System.out.println("\t2   Alertas meteorologicas automatizadas                                  ");
+                                    System.out.println("\t                                                              $100.000    ");
+                                    System.out.println("----------------------------------------------------------------------------");
+                                    System.out.println("\nCuántos combos va a comprar?");
                                     cantidadCombos = entrada.nextInt();
                                     total = cantidadCombos * precio;
                                     nVentas++;
-                                    System.out.println("El total de la compra es de: "+ total);
+                                    System.out.println("\nEl total de la compra es de: "+ total);
                                     System.out.println("Quiere finalizar la compra?");
                                     System.out.println("Opcion 1: Salir");
                                     System.out.println("Opcion 2: Quiere comprar más ");
@@ -89,18 +94,20 @@ public class ProyectoFinal {
                                     break;
                                 }
                                 else{
-                                    System.out.println("        Combo de servicio                    |               Precio              "); 
-                                    System.out.println("2   Sensor de riego                                                     ");
-                                    System.out.println("2   Drones para fertilizacion                                           ");                        
-                                    System.out.println("2   Sensor de temperatura:                                              ");                    
-                                    System.out.println("2   Alertas meteorologicas automatizadas                                ");
-                                    System.out.println("                                                              $100.000  ");
-                                    System.out.println("Cuántos combos va a comprar?");
+                                    System.out.println("----------------------------------------------------------------------------");
+                                    System.out.println("\tCOMBO DE SERVICIOS                    |               PRECIO              "); 
+                                    System.out.println("\n\t2   Sensor de riego                                                     ");
+                                    System.out.println("\t2   Drones para fertilizacion                                             ");                        
+                                    System.out.println("\t2   Sensor de temperatura:                                                ");                    
+                                    System.out.println("\t2   Alertas meteorologicas automatizadas                                  ");
+                                    System.out.println("\t                                                      $100.000            ");
+                                    System.out.println("----------------------------------------------------------------------------");
+                                    System.out.println("\nCuántos combos va a comprar?");
                                     cantidadCombos = entrada.nextInt();
                                     subTotal = cantidadCombos * precio;
                                     total = subTotal + precioInstalacion;
                                     nVentas++;
-                                    System.out.println("El total de la compra es de: "+ total);
+                                    System.out.println("\nEl total de la compra es de: "+ total);
                                     System.out.println("Quiere finalizar la compra?");
                                     System.out.println("Opcion 1: Salir");
                                     System.out.println("Opcion 2: Quiere comprar más ");
@@ -116,24 +123,24 @@ public class ProyectoFinal {
                     }
                 }
                 case 3 -> {
-                    System.out.println("De que forma va a pagar? ");
-                    System.out.println("Opción 1: Efectivo tiene 10% de descuento");
+                    System.out.println("\nDe que forma va a pagar? ");
+                    System.out.println("\nOpción 1: Efectivo tiene 10% de descuento");
                     System.out.println("Opción 2: Débito el precio se mantiene");
                     System.out.println("Opción 3: Credito 15% de recargo");
                     opcionPago = entrada.nextInt();
                     switch (opcionPago){
                         case 1 -> {
                             pagoEfectivo = (float) (total - (total * 0.10));
-                            System.out.println("El total a pagar es: "+ pagoEfectivo);
+                            System.out.println("\nEl total a pagar es: "+ pagoEfectivo);
                             caja += pagoEfectivo;
                         }
                         case 2 -> {
-                            System.out.println("El total a pagar es: "+ total);
+                            System.out.println("\nEl total a pagar es: "+ total);
                             caja += total; 
                         }
                         case 3 -> {
                             pagoDebito = (float) (total + (total * 0.15));
-                            System.out.println("El total a pagar en 1 cuota es: " + pagoDebito);
+                            System.out.println("\nEl total a pagar en 1 cuota es: " + pagoDebito);
                             System.out.println("en 3 cuotas: " + (pagoDebito % 3));
                             System.out.println("en 6 cuotas: " + (pagoDebito %6));
                             caja += pagoDebito;
@@ -141,11 +148,12 @@ public class ProyectoFinal {
                     }
                 }
                 case 4 -> {
-                    System.out.println("En el día de hoy se han realizado: "+ nVentas+ " ventas y hay una recaudación de: "+ caja);
+                    System.out.println("\nEn el día de hoy se han realizado: "+ nVentas+ " ventas y hay una recaudación de: "+ caja);
                     System.out.println("Desea cerrar la caja? SI/NO");
                     cerrarCaja = entrada.nextLine();
-                    if(cerrarCaja == "SI"){
+                    if("SI".equals(cerrarCaja)){
                         cerrado = true;
+                        System.out.println("CAJA CERRADA");
                     }
                 } 
     }
